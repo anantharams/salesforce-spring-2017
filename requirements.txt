@@ -2,5 +2,4 @@ ipython
 ipywidgets
 pytest
 requests
-virtualenv
-virtualenvwrapper
+beautifulsoup4
