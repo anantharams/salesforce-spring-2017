@@ -5,10 +5,7 @@ def combine_lists(list1, list2, list3):
     @param: list2 (list)
     @param: list3 (list)
 
-    @return: combined list with elements from all three lists
-
-    Test with:
-    $ py.test tests/data_structures/test_lists.py::ListExcercises::test_combine_lists 
+    @return: combined list with elements from all three lists 
     """
     return list1 + list2 + list3
 
@@ -18,12 +15,15 @@ def evens(n):
     to (and including) `n` that are even.
 
     @param: n (positive, numeric)
-    
 
     Test with:
-    $ py.test tests/data_structures/test_lists.py::ListExcercises::test_evens
+    $ py.test tests/data_strctures/list_excercises.py::SyntaxExcercises::test_evens
     """
-    return range (2,int(n)+1,2)
+    elements = []
+    for i in range(n + 1):
+        if i % 2 == 0 and i > 1:
+            elements.append(i)
+    return elements
 
 def begin_and_end(elements, item):
     """
@@ -32,12 +32,9 @@ def begin_and_end(elements, item):
     @return: elements but with item inserted to be both the second and last element. 
 
     HINT: list length should grow by two
-
-    Test with:
-    $ py.test tests/data_structures/test_lists.py::ListExcercises::test_begin_and_end
     """
-    elements.insert(1,item)
-    elements.insert(-1,item)
+    elements.insert(1, item)
+    elements.append(item)
     return elements
 
 def csv_line(elements, sep):
@@ -53,7 +50,7 @@ def csv_line(elements, sep):
     BONUS POINTS: Do this in a single line! Look up the `join()` function.
 
     Test with:
-    $ py.test tests/data_structures/test_lists.py::ListExcercises::test_csv_line
+    $ py.test tests/test_ds.py::DataStructureExcercises::test_csv_line
     """
     return sep.join([str(e) for e in elements])
 
