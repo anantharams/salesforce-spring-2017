@@ -9,4 +9,10 @@ def counter(elements):
     Test with:
     $ py.test tests/test_ds.py::DataStructureExcercises::test_counter
     """
-    return None
+    counts = {}
+    for e in elements:
+        if e in counts:
+            counts[e] += 1
+        else:
+            counts[e] = 1
+    return counts

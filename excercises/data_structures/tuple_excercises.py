@@ -19,4 +19,9 @@ def filter_and_rank_teams(teams, min_score, restricted_teams, top_n):
     Test with:
     $ py.test tests/test_ds.py::DataStructureExcercises::test_filter_tuples
     """
-    return None
+    filtered = [(score, name) for score, name in teams
+                if score >= min_score and
+                    name not in restricted_teams]
+    filtered.sort(reverse = True)
+
+    return filtered[:top_n]

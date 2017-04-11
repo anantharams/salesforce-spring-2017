@@ -24,7 +24,15 @@ def crazy_cases(color, number, name):
     Test with:
     $ py.test tests/test_syntax.py::SyntaxExcercises::test_crazy_cases
     """
-    return None
+
+    if str(color) == 'blue':
+        return 1
+    if number == 14:
+        return 'purple'
+    if str(name) == 'joe':
+        return 2
+    else:  
+        return 9
 
 
 def add_then_multiply(a, b, c):

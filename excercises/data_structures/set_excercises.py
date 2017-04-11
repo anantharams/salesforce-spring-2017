@@ -8,8 +8,8 @@ def similar(first, second):
 
     Test with:
     $ py.test tests/test_ds.py::DataStructureExcercises::test_similar
-    """
-    return None
+    """    
+    return list(set(first).intersection(set(second)))
 
 def contained(big_list, small_list):
     """
@@ -19,10 +19,12 @@ def contained(big_list, small_list):
     @param: small_list (list)
     @return: boolean 
     """
-    return None
+    return set(small_list) <= set(big_list)
 
 def copy_and_change_set(original_set, element):
     """
     Return a new set with the element added. Do NOT modify the original set. 
     """
-    return None
+    new_set = set(original_set)
+    new_set.add(element)
+    return new_set
