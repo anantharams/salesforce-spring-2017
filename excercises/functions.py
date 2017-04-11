@@ -1,4 +1,30 @@
 
+def cycle_colors(colors):
+    """
+    Return a generator that continually cycles through colors in this order. 
+
+    For example, if colors was ['red', 'violet', 'blue']:
+
+        'red' 
+        'violet' 
+        'blue'
+
+            then back to start...
+
+        'red'
+        'violet' 
+        'blue'
+
+        ...forever 
+
+    @return: generator 
+
+    Test with:
+    $ py.test tests/test_functions.py::FunctionExcercises::test_cycle_colors
+    """
+    yield None
+
+
 def power_list_factory():
     """
     Return a function. 

@@ -9,4 +9,10 @@ def counter(elements):
     Test with:
     $ py.test tests/data_structures/test_dictionaries.py::DictExcercises::test_counter
     """
-    return None
+    counts = {}  # element -> int
+    for e in elements:
+        if e in counts:
+            counts[e] += 1
+        else:
+            counts[e] = 1
+    return counts

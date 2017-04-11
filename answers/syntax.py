@@ -24,7 +24,13 @@ def crazy_cases(color, number, name):
     Test with:
     $ py.test tests/test_syntax.py::SyntaxExcercises::test_crazy_cases
     """
-    return None
+    if color == 'blue':
+        return 1 
+    elif number == 14:
+        return 'purple'
+    elif name == 'joe':
+        return 2 
+    return 9
 
 
 def add_then_multiply(a, b, c):
@@ -32,7 +38,7 @@ def add_then_multiply(a, b, c):
     @param: a (numeric)
     @param: b (numeric)
     @param: c (numeric)
-    @return: the product of c and a plus b
+    @return: the product of c and (a plus b)
     """
     return (a + b) * c
 
@@ -48,7 +54,7 @@ def n_mod_m_to_the_p(n, m, p):
     Test with:
     $ py.test tests/test_syntax.py::SyntaxExcercises::test_n_mod_m_to_the_p
     """
-    return None
+    return (n % m) ** p
 
 def clamp(value, hi, lo):
     """
@@ -65,7 +71,11 @@ def clamp(value, hi, lo):
     Test with:
     $ py.test tests/test_syntax.py::SyntaxExcercises::test_clamp
     """
-    return None
+    if value < lo:
+        return lo
+    elif value > hi:
+        return hi
+    return value
 
 def exponentiate_hard(power):
     """
@@ -86,5 +96,9 @@ def exponentiate_hard(power):
     Test with:
     $ py.test tests/test_syntax.py::SyntaxExcercises::test_exponentiate_hard
     """
-    return None 
+    answer = 1
+    while power > 0:
+        answer <<= 1 
+        power -= 1
+    return answer
 
