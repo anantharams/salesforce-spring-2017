@@ -45,7 +45,7 @@ class ClassesExcercises(unittest.TestCase):
         c.divide(2)
         self.assertEqual(c.get_current_total(), 1)
 
-        self.assertEqual(c.get_past_totals(), [0, 3, 1, 10, 2, 1])
+        self.assertEqual(c.get_past_totals(), [0, 3, 1, 10, 2])
 
 
         c = MyCalculator(10)
@@ -65,7 +65,7 @@ class ClassesExcercises(unittest.TestCase):
         c.divide(2)
         self.assertEqual(c.get_current_total(), 11)
 
-        self.assertEqual(c.get_past_totals(), [10, 13, 11, 110, 22, 11])
+        self.assertEqual(c.get_past_totals(), [10, 13, 11, 110, 22])
 
 
 

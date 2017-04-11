@@ -22,8 +22,17 @@ def cycle_colors(colors):
     Test with:
     $ py.test tests/test_functions.py::FunctionExcercises::test_cycle_colors
     """
-    yield None
+    counter = 0
+    while True:
+        index = counter % len(colors)
+        yield colors[index]
+        counter += 1
 
+
+# OR
+#while True:
+#    for color in colors:
+#        yeld color
 
 def power_list_factory():
     """
@@ -38,7 +47,10 @@ def power_list_factory():
     Test with:
     $ py.test tests/test_functions.py::FunctionExcercises::test_power_list_factory
     """
-    return None
+    def func (p, *ar):
+        return sum([x**p for x in ar])
+    return func
+
 
 def dict_updater_factory():
     """

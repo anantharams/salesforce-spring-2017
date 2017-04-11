@@ -1,3 +1,5 @@
+
+
 """
 A calculator that keeps a memory of its past executions. 
 
@@ -32,20 +34,51 @@ Run tests with:
 """
 
 class BaseCalculator(object):
-    def __init__(self):
-        self.total = 0
+    def __init__(self, starting_total):
+        self.total = starting_total
 
     def get_current_total(self):
         return self.total
 
 class MyCalculator(BaseCalculator):
-    def __init__(self, starting_total=None):
-        BaseCalculator.__init__(self)
+    def __init__(self, starting_total=0):
+        BaseCalculator.__init__(self, starting_total)
+        self.past_totals = []
+        
+    def get_past_totals(self):
+        return self.past_totals
 
+    def add(self, n1 , n2 = None):
+      if n2 == None:
+        n2 = self.total
+      self.past_totals.append(self.total)
+      BaseCalculator.__init__(self, n1 + n2)
+      return n1 + n2
 
+    def subtract(self, n1 , n2 = None):
+      if n2 == None:
+        n2 = self.total
+        self.past_totals.append(self.total)
+        BaseCalculator.__init__(self, n2 - n1)
+        return n2 - n1
+      self.past_totals.append(self.total)
+      BaseCalculator.__init__(self, n1 - n2)
+      return n1 - n2
 
+    def multiply(self, n1 , n2 = None):
+      if n2 == None:
+        n2 = self.total
+      self.past_totals.append(self.total)
+      BaseCalculator.__init__(self, n1 * n2)
+      return n1 * n2
 
-
-
-
-
+    def divide(self, n1 , n2 = None):
+      if n2 == None:
+        n2 = self.total
+        self.past_totals.append(int(self.total))
+        BaseCalculator.__init__(self, float(n2)/float(n1))
+        return float(float(n2)/float(n1))
+      self.past_totals.append(int(self.total))
+      BaseCalculator.__init__(self, float(n1)/float(n2))
+      return   float(float(n1)/float(n2))
+        
